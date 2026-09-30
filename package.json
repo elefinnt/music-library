@@ -1,0 +1,41 @@
+{
+  "name": "music-library",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Desktop music library for YouTube and SoundCloud audio, with Spotify metadata only.",
+  "type": "module",
+  "main": "./out/main/index.cjs",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
+    "dist": "pnpm build && electron-builder --win",
+    "fetch-sidecars": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/fetch-sidecars.ps1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron",
+      "electron-winstaller",
+      "esbuild"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^5.2.0",
+    "electron": "^44.5.0",
+    "electron-builder": "^26.15.3",
+    "electron-vite": "^5.0.0",
+    "typescript": "^7.0.2",
+    "vite": "^7.3.6"
+  },
+  "dependencies": {
+    "@fontsource/fraunces": "^5.3.0",
+    "@fontsource/outfit": "^5.3.0",
+    "music-metadata": "^11.16.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  }
+}

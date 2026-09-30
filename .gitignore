@@ -1,0 +1,10 @@
+node_modules
+out
+release
+dist
+*.log
+.DS_Store
+resources/bin/*.exe
+resources/bin/*.zip
+*.sqlite
+*.sqlite-journal
